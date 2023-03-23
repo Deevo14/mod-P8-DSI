@@ -59,10 +59,18 @@ export class Revista implements Observable {
     return this.budget;
   }
 
+  /**
+   * Getter de Observers
+   * @returns Número de observadores
+   */
   getNumberOfObservers() {
     return this.observers.length;
   }
 
+  /**
+   * Método para suscribir un observador
+   * @param observer Suscriptor
+   */
   subscribe(observer: Observer) {
     if (this.observers.includes(observer)) {
       throw new Error("The observer had already been subscribed");
@@ -71,6 +79,10 @@ export class Revista implements Observable {
     }
   }
 
+  /**
+   * Método para desuscribir un observador
+   * @param observer Suscriptor
+   */
   unsubscribe(observer: Observer) {
     const index = this.observers.indexOf(observer);
     if (index === -1) {
@@ -80,10 +92,17 @@ export class Revista implements Observable {
     }
   }
 
+  /**
+   * Método para notificar a los observadores
+   */
   notify(): void {
     this.observers.forEach((observer) => observer.update(this));
   }
 
+  /**
+   * Método para añadir una edición
+   * @param edition Nueva edición
+   */
   addEdition(edition: number) {
     this.editions.push(edition);
     this.notify();
