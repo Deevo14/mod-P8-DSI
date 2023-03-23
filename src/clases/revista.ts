@@ -35,14 +35,26 @@ export class Revista implements Observable {
     return this.name;
   }
 
+  /**
+   * Getter de Editions
+   * @returns Ediciones de la revista
+   */
   getEditions() {
     return this.editions;
   }
 
+  /**
+   * Getter de ReleaseYear 
+   * @returns Año de publicación
+   */
   getReleaseYear() {
     return this.releaseYear;
   }
 
+  /**
+   *  Getter de Budget
+   * @returns Presupuesto de la revista
+   */
   getBudget() {
     return this.budget;
   }

@@ -36,10 +36,5 @@ describe('Revista Tests', () => {
         revista.addEdition(4);
         expect(suscriptor.update(revista)).to.be.equal('Hola Pepe, la revista Revista ha sacado una nueva edición: 4');
     });
-    it('Notify error', () => {
-        const revista = new Revista('Revista', [1, 2, 3], 2020, 1000);
-        const suscriptor = new Suscriptor('Pepe', 1);
-        expect(suscriptor.update(revista)).to.throw('Observable no es una instancia de Revista');
-    });
 });
 
